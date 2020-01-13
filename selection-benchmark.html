@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selection benchmark</title>
+
+    <link rel="stylesheet" type="text/css" href="../artifacts/css/dx.common.css"/>
+    <link rel="stylesheet" type="text/css" href="../artifacts/css/dx.light.css"/>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../artifacts/js/dx.all.debug.js"></script>
+    <script type="text/javascript" src="./samples/jquery-treeview-datasources.js"></script>
+</head>
+<body>
+    <div id="treeView"></div>
+    <script>
+        test(getOneLevelDataSource);
+        test(getOneBranchDataSource);
+        test(getBalancedDataSource);
+
+        function test(treeBuilderStrategy){
+            var testCases = [100, 200, 300, 400, 500, 700, 1000];
+            var toSelect = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            testCases.forEach(function(itemsCount){
+                var tree = $("#treeView").dxTreeView({ 
+                    dataSource: treeBuilderStrategy(itemsCount),
+                    rootValue: -1, 
+                    showCheckBoxesMode: "normal",
+                    dataStructure: "plain",
+                    height: 900,
+                    width: 300,
+                    selectionMode: 'multiple',
+                }).dxTreeView('instance');
+
+                var t0 = performance.now();
+                tree.selectNodesByKeys(toSelect);
+                var t1 = performance.now();
+
+                console.log(treeBuilderStrategy.name + " itemsCount:" + itemsCount + " = " + (t1 - t0) + " milliseconds.");
+            });
+
+        }
+
+        // дерево, где все элементы - в корне
+        function getOneLevelDataSource(itemsCount){
+            var datasource = [];
+
+            for(var i = 0; i <= itemsCount; i++){
+                datasource.push({ id: i, text: "item" + i, parentId: -1, selected: false, expanded: false });
+            }
+
+            return datasource;
+        }
+
+        // дерево, где все элементы - в одной ветке (1->2->3->4->5...)
+        function getOneBranchDataSource(itemsCount){
+            var datasource = [];
+
+            for(var i = 0; i <= itemsCount; i++){
+                datasource.push({ id: i, text: "item" + i, parentId: i - 1, selected: false, expanded: false });
+            }
+
+            return datasource;
+        }
+
+        // сбалансированное дерево (B-tree)
+        function getBalancedDataSource(itemsCount){
+            var datasource = [];
+
+            for(var i = 0; i <= itemsCount; i++) {
+                var parentId = (i === 0) ? -1 : Math.floor(i / 10);
+                datasource.push({ id: i, text: "item" + i, parentId, selected: false, expanded: false });
+            }
+
+            return datasource;
+        }        
+    </script>
+</body>
+</html>
