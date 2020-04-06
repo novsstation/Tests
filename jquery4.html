@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevExtreme jQuery Example</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.common.css"/>
+
+
+    <script type="text/javascript">
+        function getTheme(){
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('theme') || 'dx.light.css';            
+        }
+
+        document.write('<link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/' + getTheme() + '"/>');
+    </script>
+    
+    <style>
+        .widget-container {
+            border: 1px solid #cccccc;
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/19.2.7/js/dx.all.debug.js" charset="utf-8"></script>
+</head>
+<body>
+    <div class="dx-viewport">    
+        <div>Choose theme: <div id="themeSelector" style="display: inline-block;"></div></div>
+
+        <hr />
+            <div class="widget-container">Button <div id="button"></div></div>
+            <div class="widget-container">TreeView <div id="treeView" style="display: inline-block;vertical-align: top;position: relative;top:-7px;"></div></div>
+            <div class="widget-container">Form <div id="form"></div></div>
+            <div class="widget-container">List <div id="list"></div></div>
+            <div class="widget-container">TreeList <div id="treeList"></div></div>
+            <div class="widget-container">Accordion <div id="accordion"></div></div>
+            <div class="widget-container">Menu <div id="menu"></div></div>
+            <div class="widget-container">MultiView <div id="multiView"></div></div>
+            <div class="widget-container">TabPanel <div id="tabPanel"></div></div>
+            <div class="widget-container">Tabs <div id="tabs"></div></div>
+            <div class="widget-container">Toolbar <div id="toolbar"></div></div>
+            <div class="widget-container">RadioGroup <div id="radioGroup"></div></div>
+            <div class="widget-container">ButtonGroup <div id="buttonGroup"></div></div>
+            <div class="widget-container">Calendar <div id="calendar"></div></div>
+            <div class="widget-container">Datebox <div id="dateBox" style="display: inline-block;"></div></div>
+            <div class="widget-container">Context menu: <span id="contextMenuTarget">click me to show context menu</span> <div id="contextMenu"></div></div>
+            <div class="widget-container">Slideout <div id="slideout"></div></div>
+            <div class="widget-container">Slideout <div id="slideout"></div></div>
+            <div class="widget-container">Navbar <div id="navbar"></div></div>            
+        </div>        
+        
+    <script>
+        $(function() {
+            $("#button").dxButton({
+                text: 'Click me!',
+                onClick: function() { alert("clicked"); }
+            });
+
+            $("#treeView").dxTreeView({
+                width: 100,
+                items: [{ text: 'item1', items: [{ text: 'item1_1', items:[ { text: 'item1_1_1' } ] }] } ]
+            });            
+
+            $("#form").dxForm({
+                items: [ { dataField: 'field1' }, { dataField: 'field2' }, { dataField: 'field3' } ]
+            });   
+
+            $("#list").dxList({
+                dataSource: [{ id: 1, text: 'item1' }, { id: 2, text: 'item2' } ]
+            });   
+
+            $("#treeList").dxTreeList({
+                dataSource: [{ id: 1, text: 'item1' }, { id: 2, text: 'item2' } ]
+            });    
+
+            $("#accordion").dxAccordion({
+                dataSource: [{ id: 1, text: 'item1' }, { id: 2, text: 'item2' } ]
+            }); 
+
+            $("#menu").dxMenu({
+                dataSource: [{ id: 1, text: 'item1', items: [{ text: 'item1_1', items:[ { text: 'item1_1_1' } ] }] }, { id: 2, text: 'item2', items: [{ text: 'item2_2', items:[ { text: 'item2_2_2' } ] }] } ]
+            }); 
+
+            $("#multiView").dxMultiView({
+                dataSource: [{ id: 1, text: 'item1' }, { id: 2, text: 'item2' } ]
+            });  
+
+            $("#tabPanel").dxTabPanel({
+                dataSource: [{ id: 1, title: 'tab1', text: 'item1' }, { id: 2, title: 'tab2', text: 'item2' } ]
+            });    
+
+            $("#tabs").dxTabs({
+                dataSource: [{ id: 1, text: 'item1' }, { id: 2, text: 'item2' } ]
+            });
+
+            $("#toolbar").dxToolbar({
+                dataSource: [{ id: 1, text: 'item1' }, { id: 2, text: 'item2' } ]
+            });
+
+            $("#radioGroup").dxRadioGroup({
+                items: ["slide", "expand"],
+                layout: "horizontal",
+            });           
+
+            $("#buttonGroup").dxButtonGroup({
+                items: [{ alignment: "left", text: "Align left" }, {  alignment: "center", text: "Center" }, { alignment: "right", text: "Align right" }]
+            });
+
+            $("#calendar").dxCalendar({
+                value: new Date()
+            });
+
+            $("#dateBox").dxDateBox({
+                type: "date",
+                width: 100
+            });                              
+
+            $("#contextMenu").dxContextMenu({
+                target: "#contextMenuTarget",
+                dataSource: [{ id: 1, text: 'item1' }, { id: 2, text: 'item2' } ]
+            });
+
+            $("#slideout").dxSlideOut({ 
+                dataSource: [{ id: 1, text: 'item1' }, { id: 2, text: 'item2' } ],
+                height: 200,
+                menuVisible: true,
+                swipeEnabled: true,
+                menuGrouped: true,
+                itemTemplate: function(itemData, itemIndex, itemElement) {
+                    $("<div/>")
+                        .appendTo(itemElement)
+                        .dxToolbar({
+                            dataSource: [{ 
+                            location: "before",
+                            widget: "dxButton",
+                            options: {
+                                    icon: "menu",
+                                }
+                            }, { 
+                                location: "center",
+                                template: function(e) {
+                                    return "<p>" + itemData.text + "</p>";
+                                }
+                            }]
+                        });
+            
+                    var $infoContainer = $("<div />").attr("id", "info");
+                    $infoContainer.append(
+                        $("<img />").attr("src", itemData.src),
+                        $("<h1 />").text(itemData.price)
+                    );
+            
+                    var $fieldSetContainer = $("<div />").addClass("dx-fieldset");
+                    $fieldSetContainer.append(
+                        $("<div />").addClass("dx-fieldset-header").text("Options"),
+                        $("<div />").addClass("dx-field").append(
+                            $("<div />").addClass("dx-field-label").text("Swipe to reveal the menu"),
+                            $("<div />").addClass("dx-field-value switch")
+                        )
+                    );
+            
+                    itemElement.append($infoContainer, $fieldSetContainer);
+                 },
+                menuGroupTemplate: function(e) {
+                    return "<b>" + e.text + "</b>";
+                }
+            })   
+
+            $("#navbar").dxNavBar({
+                dataSource: [{ id: 1, text: 'item1' }, { id: 2, text: 'item2' } ]
+            });           
+            
+            $("#themeSelector").dxSelectBox({
+                placeholder: "Choose theme",
+                width: 200,
+                value: getTheme(),
+                onValueChanged: function (data) {
+                    var url = window.location.href;    
+                    const themeIndex = url.indexOf('?theme');
+                    if (themeIndex !== -1){
+                        url = url.substring(0, themeIndex);
+                    }
+                    window.location.href = url + '?theme=' + data.value;
+                },                
+                items: [
+                    'dx.carmine.compact.css',
+                    'dx.carmine.css',
+                    'dx.contrast.compact.css',
+                    'dx.contrast.css',
+                    'dx.dark.compact.css',
+                    'dx.dark.css',
+                    'dx.darkmoon.compact.css',
+                    'dx.darkmoon.css',
+                    'dx.darkviolet.compact.css',
+                    'dx.darkviolet.css',
+                    'dx.greenmist.compact.css',
+                    'dx.greenmist.css',
+                    'dx.light.compact.css',
+                    'dx.light.css',
+                    'dx.material.blue.dark.compact.css',
+                    'dx.material.blue.dark.css',
+                    'dx.material.blue.light.compact.css',
+                    'dx.material.blue.light.css',
+                    'dx.material.lime.dark.compact.css',
+                    'dx.material.lime.dark.css',
+                    'dx.material.lime.light.compact.css',
+                    'dx.material.lime.light.css',
+                    'dx.material.orange.dark.compact.css',
+                    'dx.material.orange.dark.css',
+                    'dx.material.orange.light.compact.css',
+                    'dx.material.orange.light.css',
+                    'dx.material.purple.dark.compact.css',
+                    'dx.material.purple.dark.css',
+                    'dx.material.purple.light.compact.css',
+                    'dx.material.purple.light.css',
+                    'dx.material.teal.dark.compact.css',
+                    'dx.material.teal.dark.css',
+                    'dx.material.teal.light.compact.css',
+                    'dx.material.teal.light.css',
+                    'dx.softblue.compact.css',
+                    'dx.softblue.css'                    
+                ]
+            });
+        })
+    </script>
+</body>
+</html>
