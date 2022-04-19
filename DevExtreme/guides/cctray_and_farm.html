@@ -1,0 +1,116 @@
+<!--
+title: CCTray & Farm
+description: 
+published: true
+date: 2022-04-18T12:51:03.843Z
+tags: 
+editor: ckeditor
+dateCreated: 2022-04-18T12:42:51.738Z
+-->
+
+<h2><strong>Волонтерство на ферме</strong></h2>
+<p>See this thread:&nbsp;<a href="https://teams.microsoft.com/l/message/19:7a8fe7395a2d47288c29cfc421df6cbf@thread.skype/1559573858499?tenantId=e4d60396-9352-4ae8-b84c-e69244584fa4&amp;groupId=8c31b3e5-5870-46b1-92a7-180d13b282ed&amp;parentMessageId=1559573858499&amp;teamName=DevExtreme&amp;channelName=General&amp;createdTime=1559573858499">Волонтерство на ферме&nbsp;</a></p>
+<p>&nbsp;</p>
+<h2><strong>GitHub commits notifications</strong></h2>
+<p>Нужно указать в CCTray имя (точнее, два имени), которое указывается в поле&nbsp;author коммитов, сделанных через сам GitHub (мерж PR - это коммит, сделанный через GitHub). Теоретически, GitHub должен использовать username (логин), но на практике - используется name (публичное имя профиля). Поэтому в CCTray нужно указать <strong><u>оба имени через точку с запятой</u></strong>:</p>
+<figure class="image image_resized" style="width:calc(100% - 5rem);"><img src="blob:https://teams.microsoft.com/5ae1cfe2-18e4-47a0-aead-31989328d67f" alt=""></figure>
+<p>For more details see this&nbsp;<a href="https://teams.microsoft.com/l/message/19:7a8fe7395a2d47288c29cfc421df6cbf@thread.skype/1554905786133?tenantId=e4d60396-9352-4ae8-b84c-e69244584fa4&amp;groupId=8c31b3e5-5870-46b1-92a7-180d13b282ed&amp;parentMessageId=1554905786133&amp;teamName=DevExtreme&amp;channelName=General&amp;createdTime=1554905786133">thread</a>. And <a href="https://teams.microsoft.com/l/message/19:1f90738df26145b4b7aadcfcadc0cd87@thread.skype/1559647338499?tenantId=e4d60396-9352-4ae8-b84c-e69244584fa4&amp;groupId=8c31b3e5-5870-46b1-92a7-180d13b282ed&amp;parentMessageId=1559647338499&amp;teamName=DevExtreme&amp;channelName=Grids&amp;createdTime=1559647338499">this one</a>.</p>
+<figure class="image"><img src="/image_2022-04-18_165007918.png"></figure>
+<h2><strong>Adding a WG Task</strong></h2>
+<p><strong>dxVCS</strong></p>
+<p>1. Открой файл&nbsp;<strong>$/CCNetConfig/Server/Config/devextreme-18.2-testcafe.xml</strong></p>
+<p>2. Найди группу&nbsp;<strong>&lt;!-- WidgetsGallery --&gt;</strong></p>
+<p>3. Там разложены таски по подходам с конфигами вида</p>
+<p>&lt;cb:scope SectionNumber="12" <i>SectionName="Scheduler"&gt;&lt;cb:devextreme_testcafe_demos_widgetsgallery/&gt;&lt;/cb:scope&gt;</i></p>
+<p>4.&nbsp;<strong>SectionNumber&nbsp;</strong>- порядковый номер,&nbsp;<strong>SectionName&nbsp;</strong>- название раздела в WidgetsGallery, у которого вырезаны пробелы и дефисы.</p>
+<p>5. После добавления нужных изменений не забудь зачекинить файл.</p>
+<p><strong>dxCCTray</strong></p>
+<p>6. Запусти таску&nbsp;<strong>$configWatcher</strong></p>
+<p>7. После того, как она прогонится, появятся новые таски, сконфигурированные тобой в dxVCS.&nbsp;Запусти их.</p>
+<p><strong>ScreenshotReporter</strong></p>
+<p>8. Нужно подготовить PR в&nbsp;<a href="https://github.com/DevExpress/testcafe-visual-testing">testcafe-visual-testing</a>. Можно ориентироваться на предыдущие&nbsp;<a href="https://github.com/DevExpress/testcafe-visual-testing/pull/26/files">PR</a></p>
+<p>&nbsp;</p>
+<h2><strong>DXCCNet Manual</strong></h2>
+<p><a href="http://ccnet.devexpress.devx/ccnet/doc/">http://ccnet.devexpress.devx/ccnet/doc/</a></p>
+<p>&nbsp;</p>
+<h2><strong>RDP connection</strong></h2>
+<p>You can connect to the worker carrying your task via RDP:</p>
+<ol>
+  <li>Force task (if required)</li>
+  <li>Task context menu (right-click)&nbsp;-&gt; click&nbsp;"Locate &lt;MACHINE_NAME&gt;"</li>
+  <li>Machine&nbsp;context-menu -&gt; Stop server</li>
+  <li>Machine&nbsp;context-menu -&gt; Show remote desktop</li>
+  <li>Use admin account</li>
+</ol>
+<p>&nbsp;</p>
+<h2><strong>Stopping a project</strong></h2>
+<p>По инфе от Крылова, застопленные проекты перезапускаются после рестарта фермы.</p>
+<p>For more details see this&nbsp;<a href="https://teams.microsoft.com/l/message/19:7a8fe7395a2d47288c29cfc421df6cbf@thread.skype/1556096726332?tenantId=e4d60396-9352-4ae8-b84c-e69244584fa4&amp;groupId=8c31b3e5-5870-46b1-92a7-180d13b282ed&amp;parentMessageId=1556096726332&amp;teamName=DevExtreme&amp;channelName=General&amp;createdTime=1556096726332">thread</a>.</p>
+<p>&nbsp;</p>
+<h2><strong>Easy test the latest installation</strong></h2>
+<p>Быстрый способ&nbsp;поставить последнюю инсталляху для проверки: взять сервер с нашей фермы и выбрать нужный скрипт из предложенных.</p>
+<p>For more details see these&nbsp;<a href="https://teams.microsoft.com/l/message/19:7a8fe7395a2d47288c29cfc421df6cbf@thread.skype/1556196608598?tenantId=e4d60396-9352-4ae8-b84c-e69244584fa4&amp;groupId=8c31b3e5-5870-46b1-92a7-180d13b282ed&amp;parentMessageId=1556196608598&amp;teamName=DevExtreme&amp;channelName=General&amp;createdTime=1556196608598">thread1</a>, <a href="https://teams.microsoft.com/l/message/19:7a8fe7395a2d47288c29cfc421df6cbf@thread.skype/1556191192795?tenantId=e4d60396-9352-4ae8-b84c-e69244584fa4&amp;groupId=8c31b3e5-5870-46b1-92a7-180d13b282ed&amp;parentMessageId=1556191192795&amp;teamName=DevExtreme&amp;channelName=General&amp;createdTime=1556191192795">thread2</a></p>
+<p>&nbsp;</p>
+<h2><strong>Add a new CCtray script</strong></h2>
+<p>See this <a href="https://supportserver/res/cctray-scripts/">guide</a></p>
+<p>&nbsp;</p>
+<h2><strong>Update portable browser</strong></h2>
+<p>You'll need <strong>dxVCS</strong></p>
+<ol>
+  <li>Download Chrome Portable (e.g. from <a href="https://portableapps.com/apps/internet/google-chrome-portable-64">https://portableapps.com/apps/internet/google-chrome-portable-64</a>)</li>
+  <li>Rename browser's folder to `chrome-portable`</li>
+  <li>Add it to the <strong>7z</strong> archive, the name of the archive must correspond to the following pattern: `<strong>chrome-portable-x64-VERSION</strong>`, e.g. "chrome-portable-x64-86.0.4240.183.7z"</li>
+  <li>Add the archive&nbsp;to the dxVCS -&gt; $/CCNetConfig/Tools/PortableBrowsers/</li>
+  <li>Update CCTrayConfig&nbsp;-&gt; $/CCNetConfig/Server/Config/devextreme-MAJOR_VERSION-qunit.xml, e.g. devextreme-21.1-qunit.xml</li>
+  <li>You should update `ChromeVersion` parameter, it should reflect the <strong>x64-VERSION </strong>part of the portable chrome acrhieve name, e.g. ChromeVersion="x64-88.0.4324.104"</li>
+  <li>CCTray -&gt; force the $configWatcher task (can take some time because it waits until each updating project task finishes)</li>
+  <li>Copy changes for "devextreme-xx.x-qunit.xml" files of all actual releases and force the $configWatcher task</li>
+</ol>
+<p>For firefox the steps will be similar, the differences will be in the name of the archive(firefox-portable-x64-VERSION) and in the parameter name (FirefoxVersion instead of ChromeVersion)</p>
+<p>For NodeJS version see $/CCNetConfig/Server/Config/devextreme-MAJOR_VERSION-qunit.xml: there is NodeJSVersion="14.15.0"</p>
+<p>&nbsp;</p>
+<h2><strong>Removing CI pipelines for discontinued builds</strong></h2>
+<p><strong>We should remove pipelines one month after marking build as discontinued.</strong></p>
+<ol>
+  <li>Open DXVCS</li>
+  <li>Checkout (Ctrl+O) the following files<ol>
+      <li><i>$/CCNetConfig/Server/Config/config-entities.ent</i></li>
+      <li><i>$/CCNetConfig/Server/Config/devextreme-XX.Y.xml </i>(here and below: replace XX.Y or XX_Y with the version you need to remove)</li>
+      <li>If you checked out another file by mistake, do not forget to undo-checkout it (Ctrl+U)</li>
+    </ol>
+  </li>
+  <li>Open (F4 or Shift+~) config-entities.ent in your favorite code editor and remove the following strings:<ol>
+      <li><i>&amp;devextreme_XX_Y_qunit;&nbsp;&nbsp;&nbsp;</i></li>
+      <li><i>&amp;devextreme_XX_Y_testcafe;</i></li>
+      <li><i>&lt;!ENTITY &nbsp;devextreme_XX_Y_qunit SYSTEM "file:devextreme-XX.Y-qunit.xml"&gt;</i></li>
+      <li><i>&lt;!ENTITY &nbsp;devextreme_XX_Y_testcafe SYSTEM "file:devextreme-XX.Y-testcafe.xml"&gt;</i></li>
+    </ol>
+  </li>
+  <li>Open the <i>devextreme-XX.Y.xml </i>and remove:<ol>
+      <li>All the <i>&lt;smart queue="Tests"&gt;</i> and their descendants</li>
+      <li>A node containing the "<i>DevExtreme Demos Publishing"</i> string</li>
+      <li>A node containing the "<i>SitePublishingUrlReplacer</i>" string</li>
+    </ol>
+  </li>
+  <li>Commit (Ctrl+I) the <i>config-entities.ent</i> and <i>devextreme-XX.Y.xml </i>files. Do not forget to add a simple but descriptive commit message!</li>
+  <li>Clone the <a href="https://github.com/DevExpress/testcafe-visual-testing">https://github.com/DevExpress/testcafe-visual-testing</a> repository:<ol>
+      <li>Remove the strings that match the .*XX.Y.* pattern from the <a href="https://github.com/DevExpress/testcafe-visual-testing/blob/master/screenshot-reporter/ScreenShotReporter/App_Data/Projects.xml">screenshot-reporter/ScreenShotReporter/App_Data/Projects.xml</a>&nbsp;file</li>
+      <li>Fix formatting</li>
+      <li>Publish the ScreenShotReporter project (using the VisualStudio menu: Build\Publish)</li>
+      <li>Commit your changes</li>
+    </ol>
+  </li>
+  <li>Open DXCCTray<ol>
+      <li>Find the <i>$configWatcher </i>task, right-click on it, and click the "<i>Force Build</i>" menu item</li>
+      <li>Wait until config watcher completes execution</li>
+    </ol>
+  </li>
+  <li>Go back to DXVCS and remove (Del) the following files:<ol>
+      <li><i>$/CCNetConfig/Server/Config/devextreme-XX.Y-qunit.xml</i></li>
+      <li><i>$/CCNetConfig/Server/Config/devextreme-XX.Y-testcafe.xml</i></li>
+    </ol>
+  </li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><br>&nbsp;</p>

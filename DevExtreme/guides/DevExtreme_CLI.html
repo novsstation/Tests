@@ -1,0 +1,30 @@
+<!--
+title: DevExtreme CLI
+description: 
+published: true
+date: 2022-04-18T13:14:05.144Z
+tags: 
+editor: ckeditor
+dateCreated: 2022-04-18T13:14:02.802Z
+-->
+
+<h2><strong>Repository structure</strong></h2>
+<p>The <a href="https://github.com/DevExpress/devextreme-cli">devextreme-cli</a> repository contains 2 projects located in <strong>/packages</strong> folder:</p>
+<ul>
+  <li>devextreme-cli</li>
+  <li>devextreme-schematics</li>
+</ul>
+<p>We use <a href="https://github.com/lerna/lerna">Lerna</a> for managing those packages.</p>
+<p>&nbsp;</p>
+<h2><strong>Git Branches</strong></h2>
+<p>Our branching strategy is a simplified version of <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">GitFlow</a>. The main difference is that it's not always necessary to create a release branch for publication.</p>
+<p>There are&nbsp;two main branches:&nbsp;<strong>master</strong> and <strong>dev</strong>. The <strong>master</strong> branch stores the package stable versions. The <strong>dev</strong> branch is used for implementing new features.</p>
+<p>&nbsp;</p>
+<h2><strong>Features</strong></h2>
+<p>Feature branches should use <strong>dev</strong> as their parent branch.</p>
+<p>Pull requests with new features should target <strong>dev</strong> branch.</p>
+<p>&nbsp;</p>
+<h2><strong>Bugs</strong></h2>
+<p>Branches with bug fixes should be based on <strong>master</strong>.</p>
+<p>The complete fix should be merged into both <strong>master</strong> and <strong>dev</strong>.</p>
+<p>New features are merged from <strong>dev</strong> to <strong>master</strong> branch when they are tested and ready for publishing.</p>

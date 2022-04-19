@@ -1,0 +1,24 @@
+<!--
+title: Dependent Products
+description: 
+published: true
+date: 2022-04-18T13:15:14.151Z
+tags: 
+editor: ckeditor
+dateCreated: 2022-04-18T13:15:11.758Z
+-->
+
+<h2><strong>Dashboard wrappers</strong></h2>
+<p>В общем и целом картина такая:</p>
+<ul>
+  <li>Для дашборда генерируются врапперы для react, vue, angular</li>
+  <li>Для этого используются наши тулзы и генераторы из репозиториев врапперов</li>
+  <li>Тулзы к ним попадают обычным образом, через npm. Версия сейчас "^3.0.0"</li>
+  <li>Врапперные генераторы попадают к ним тоже через npm (наш локальный Вердацио). Они туда публикуются вместе с остальными пакетами (devexteme, devextreme-react, devextrem-react-generator, etc.). Пакет с генератором публикуется, если таска найдет в его package.json версию, которая новее той, которая уже опубликована на Вердацио</li>
+  <li>Посмотреть, какие у дашбордов используются версии тулзов и генераторов можно тут:<ul>
+      <li><a href="https://github.com/DevExpress/dashboards/blob/21_2/src/dashboard-react-generator/package.json">https://github.com/DevExpress/dashboards/blob/21_2/src/dashboard-react-generator/package.json</a></li>
+      <li><a href="https://github.com/DevExpress/dashboards/blob/21_2/src/dashboard-vue-generator/package.json">https://github.com/DevExpress/dashboards/blob/21_2/src/dashboard-vue-generator/package.json</a></li>
+      <li><a href="https://github.com/DevExpress/dashboards/blob/21_2/src/dashboard-angular-generator/package.json">https://github.com/DevExpress/dashboards/blob/21_2/src/dashboard-angular-generator/package.json</a></li>
+    </ul>
+  </li>
+</ul>
