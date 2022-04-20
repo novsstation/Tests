@@ -2,7 +2,7 @@
 title: ASP.NET MVC/Core Manual - Wrappers, Wizards, Scaffolders
 description: 
 published: true
-date: 2022-04-18T13:54:56.777Z
+date: 2022-04-20T07:59:38.874Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T13:53:59.180Z
@@ -628,6 +628,13 @@ Core-ские проекты созданные как Blazor не поддер�
 
   
 И проверить физически на диске, есть ли требуемые файлы там.
+
+## 6.4 Как сбилдить проект
+
+Сбилдить можно в том числе с использованием MSBuild через коммандную строку:
+```cs
+D:\HG\DevExtreme.AspNet.Mvc>"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" DevExtreme.AspNet.Mvc.VisualStudio.sln -t:restore,build -p:RestorePackagesConfig=true
+```
 
 # 7 Как проверить/фиксить проблему пользователя 
 
