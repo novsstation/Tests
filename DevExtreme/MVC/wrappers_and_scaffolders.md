@@ -2,13 +2,13 @@
 title: ASP.NET MVC/Core Manual - Wrappers, Wizards, Scaffolders
 description: 
 published: true
-date: 2022-04-20T07:59:38.874Z
+date: 2022-04-20T08:02:16.820Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T13:53:59.180Z
 ---
 
-# 1 MVC Врапперы
+# 1. MVC Врапперы
 
 Запускаем солюшн:  *<HG>\\DevExtreme.AspNet.Mvc\\DevExtreme.AspNet.Mvc.Lib-Dev.sln*
 
@@ -75,7 +75,7 @@ dateCreated: 2022-04-18T13:53:59.180Z
 
 [_https://github.com/DevExpress/devextreme-demos/blob/22\_1/utils/internal/update-aspnet-data.js_](https://github.com/DevExpress/devextreme-demos/blob/22_1/utils/internal/update-aspnet-data.js)
 
-# 2 VisualStudio VS 2019 and older
+# 2. VisualStudio VS 2019 and older
 
 Запускаем солюшн: *<HG\_MOBILE>\\DevExtreme.AspNet.Mvc\\ DevExtreme.AspNet.Mvc.VisualStudio.sln*
 
@@ -385,7 +385,7 @@ DevExtreme.AspNet.Mvc.VisualStudio.VS2022.sln
 > Такая же последовательность и в процессе сборки VSIX на ферме.  
 >  
 
-# 3 MVC Инсталяха Ферма
+# 3. MVC Инсталяха Ферма
 
 ## 3.1 Сборка инсталяхи и ZIP архивов
 
@@ -397,10 +397,12 @@ DevExtreme.AspNet.Mvc.VisualStudio.VS2022.sln
 
 1\. В файле ‘Product.DevExtreme.xml’ определены два подпродукта:
 
+```xml
   <SubProductInfos>  
     <SubProductInfo VSSFileLocation="$/CCNetConfig/LocalProjects/DevExtreme/22.1/Build/Product.DevExtreme.HTMLJS.xml" VSSName="dxvcs" />  
     <SubProductInfo VSSFileLocation="$/CCNetConfig/LocalProjects/DevExtreme/22.1/Build/Product.DevExtreme.MVC.xml" VSSName="dxvcs" />  
   </SubProductInfos>    
+```  
 
 2\. Добавить контент в инсталяху можно в этом блоке:
 
@@ -421,7 +423,7 @@ sh.exec(\`7z a ${HG\_ROOT}/InstallationArtifacts/ZipInstallation/Sources-${VERSI
 
 Сборка и копирование NuGet пакетов, ASP.NET длл'ок, NPM пакетов, Help Assemblies, раскопирование общих ДЛЛок, выполнение внутренних тулзов …
 
-# 4 Функциональные тесты
+# 4. Функциональные тесты
 
 Есть функциональные тесты написанные на основе TestComplete тулзах и на APPIUM фреймворке.
 
@@ -460,7 +462,7 @@ sh.exec(\`7z a ${HG\_ROOT}/InstallationArtifacts/ZipInstallation/Sources-${VERSI
 >   
 > Нужно закоментить эту часть кода. А устанавливать через командную строку в сайлент-моде 
 
-# 5 Ферма
+# 5, Ферма
 
 Описания тасок на ферме здесь:
 
@@ -596,7 +598,7 @@ _Какие проблемы могут быть:_
 
     https://github.com/microsoft/WinAppDriver/releases/tag/v1.2-RC
 
-# 6 Известные сценарии ( Known Issues )
+# 6, Известные сценарии ( Known Issues )
 
 Популярные траблы
 
@@ -636,7 +638,7 @@ Core-ские проекты созданные как Blazor не поддер�
 D:\HG\DevExtreme.AspNet.Mvc>"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" DevExtreme.AspNet.Mvc.VisualStudio.sln -t:restore,build -p:RestorePackagesConfig=true
 ```
 
-# 7 Как проверить/фиксить проблему пользователя 
+# 7, Как проверить/фиксить проблему пользователя 
 
 Если кастомер пришёл, и никакие советы не помогают. То первым делом попробовать воспроизвести его проблему на нашей стороне:
 
