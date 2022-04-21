@@ -2,7 +2,7 @@
 title: TypeScript Generation
 description: 
 published: true
-date: 2022-04-18T11:54:19.134Z
+date: 2022-04-21T11:05:15.164Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T11:54:00.402Z
