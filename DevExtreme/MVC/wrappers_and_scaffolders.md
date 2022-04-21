@@ -2,7 +2,7 @@
 title: ASP.NET MVC/Core Manual - Wrappers, Wizards, Scaffolders
 description: 
 published: true
-date: 2022-04-20T09:14:02.524Z
+date: 2022-04-21T11:19:24.496Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T13:53:59.180Z
