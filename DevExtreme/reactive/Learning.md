@@ -2,7 +2,7 @@
 title: Learning
 description: 
 published: true
-date: 2022-04-19T06:03:39.920Z
+date: 2022-04-21T11:18:51.235Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T12:00:58.213Z
