@@ -2,7 +2,7 @@
 title: index
 description: 
 published: true
-date: 2022-04-18T11:24:30.778Z
+date: 2022-04-21T06:04:23.524Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T11:24:28.225Z
@@ -21,17 +21,17 @@ If an issue cannot be resolved due to the current specifics of a particular feat
 this information should be added to the following document to the section that relates to the problematic feature.
 This information will be useful for processing issues in future.
 
-[DataGrid Internal Documentation](data_grid/known_issues.md)
+[DataGrid Internal Documentation](/DevExtreme/components/DataGrid/known_issues.md)
 
 ## Issues that require refactoring
 
 If you found out problematic code that should be modified or removed for solving issues or you have an idea how to improve the existing functionality, but you cannot do it in the context of a simple bug fix, and it will require significant refactoring, do not forget to add this information to the following document:
 
-[DataGrid Problems for Refactoring](data_grid/problems_for_refactoring.md)
+[DataGrid Problems for Refactoring](/DevExtreme/components/DataGrid/problems_for_refactoring.md)
 
 ## Renovation
 
-- [DataGridLight docs](data_grid_light/index.md)
+- [DataGridLight docs](/DevExtreme/components/DataGrid_light/index.md)
 - [DataGrid Renovation Plan](https://devexpress-my.sharepoint.com/:w:/p/konstantin_volnyagin/ERtVid-lvmFMlGLWori-x28BLcZLaxcbGY-FDkuU0j71VQ?e=kVFPrM)
 - [Renovation Breaking Changes](https://devexpress-my.sharepoint.com/:w:/p/konstantin_volnyagin/ER0ODixOCZdEhqC1KReRyF4BluP6LcocA_-4IW_V1b6NDw?e=17Nf68)
 - [Plugins Research](https://devexpress-my.sharepoint.com/:w:/p/konstantin_volnyagin/EWPzPVYU5ORMp_7H0-_2bQQBoaTgCxwssQgaf1s62Rz6yA?e=ec4sTO)
