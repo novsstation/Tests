@@ -2,7 +2,7 @@
 title: Product
 description: 
 published: true
-date: 2022-04-21T11:12:11.799Z
+date: 2022-04-21T11:12:20.524Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T13:20:38.248Z
