@@ -2,7 +2,7 @@
 title: DevOps
 description: 
 published: true
-date: 2022-04-21T11:09:55.424Z
+date: 2022-04-21T11:10:07.705Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T12:14:30.249Z
