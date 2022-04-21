@@ -2,7 +2,7 @@
 title: Dependent Products
 description: 
 published: true
-date: 2022-04-21T11:08:42.788Z
+date: 2022-04-21T11:08:56.550Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T13:15:11.758Z
