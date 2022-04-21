@@ -2,7 +2,7 @@
 title: Metadata Generation
 description: 
 published: true
-date: 2022-04-18T11:51:09.771Z
+date: 2022-04-21T11:03:49.616Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T11:51:07.229Z
