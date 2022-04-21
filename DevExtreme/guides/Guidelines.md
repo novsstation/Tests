@@ -2,7 +2,7 @@
 title: Guidelines
 description: 
 published: true
-date: 2022-04-21T11:11:09.653Z
+date: 2022-04-21T11:11:16.934Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T12:11:51.610Z
