@@ -2,7 +2,7 @@
 title: DevExtreme CLI
 description: 
 published: true
-date: 2022-04-21T11:09:12.602Z
+date: 2022-04-21T11:09:32.041Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T13:14:02.802Z
