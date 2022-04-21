@@ -2,7 +2,7 @@
 title: API Declarations
 description: 
 published: true
-date: 2022-04-21T11:06:42.925Z
+date: 2022-04-21T11:22:25.929Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T13:05:36.359Z
