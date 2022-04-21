@@ -2,7 +2,7 @@
 title: Naming guidelines
 description: 
 published: true
-date: 2022-04-21T11:18:08.534Z
+date: 2022-04-21T11:18:22.707Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T11:58:22.160Z
