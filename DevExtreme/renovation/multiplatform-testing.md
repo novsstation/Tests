@@ -1,8 +1,8 @@
 ---
-title: multiplatform-testing
+title: multiplatform testing
 description: 
 published: true
-date: 2022-04-18T11:25:03.689Z
+date: 2022-04-21T11:17:15.547Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T11:25:01.078Z
