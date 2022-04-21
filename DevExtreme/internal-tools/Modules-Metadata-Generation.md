@@ -2,7 +2,7 @@
 title: Modules Metadata Generation
 description: 
 published: true
-date: 2022-04-21T11:04:17.557Z
+date: 2022-04-21T11:21:36.341Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T11:52:13.764Z
