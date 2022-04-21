@@ -1,8 +1,8 @@
 ---
-title: jest-performance-research
+title: jest performance research
 description: 
 published: true
-date: 2022-04-18T11:24:40.874Z
+date: 2022-04-21T11:17:43.358Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-18T11:24:38.215Z
