@@ -2,7 +2,7 @@
 title: Настройка вики
 description: 
 published: true
-date: 2022-04-22T06:03:48.233Z
+date: 2022-04-22T06:19:16.404Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-19T11:07:18.574Z
@@ -31,9 +31,13 @@ Follow this [guide](https://docs.requarks.io/install/ubuntu)
 .v-main__wrap .layout {
   flex-direction: row-reverse
 }
-
 h1 {
   margin-bottom: 30px
+}
+
+
+header .breadcrumbs-nav {
+  pointer-events: none;
 }
 ```
 
