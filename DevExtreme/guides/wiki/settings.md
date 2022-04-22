@@ -2,7 +2,7 @@
 title: Настройка вики
 description: 
 published: true
-date: 2022-04-22T06:20:18.331Z
+date: 2022-04-22T06:25:59.455Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-19T11:07:18.574Z
@@ -84,4 +84,5 @@ ha: $(HA_ACTIVE)
 > ```plaintext
 > sudo docker exec -it wiki bash
 > ```
+
 
