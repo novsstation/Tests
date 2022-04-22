@@ -2,7 +2,7 @@
 title: Настройка вики
 description: 
 published: true
-date: 2022-04-22T05:57:28.479Z
+date: 2022-04-22T06:02:51.820Z
 tags: 
 editor: markdown
 dateCreated: 2022-04-19T11:07:18.574Z
@@ -41,7 +41,31 @@ h1 {
 
 ## Настройка https и авторизации через Office365
 
-Вначале нужно настроить [https](https://docs.requarks.io/install/ubuntu). На этой же страничке есть возможность обновления https сертификата через Let's Encrypt.
+Был придуман очень гибкий механизм чтобы не париться с продлением и актуализацией сертификатов. Есть настроенный балансировщик, который проксирует запросы к домену на публичный айпишник с нужными портами. Поэтому сертификат настраивать не нужно и файлик конфига, который в контейнере расположен по пути root/wiki/config.yml имеет все дефолтные настройки из этого [гайда](https://docs.requarks.io/install/ubuntu):
+
+```yml
+port: 3000
+bindIP: 0.0.0.0
+db:
+  type: $(DB_TYPE)
+  host: '$(DB_HOST)'
+  port: $(DB_PORT)
+  user: '$(DB_USER)'
+  pass: '$(DB_PASS)'
+  db: $(DB_NAME)
+  storage: $(DB_FILEPATH)
+  ssl: $(DB_SSL)
+ssl:
+  enabled: $(SSL_ACTIVE)
+  port: 3443
+  provider: letsencrypt
+  domain: $(LETSENCRYPT_DOMAIN)
+  subscriberEmail: $(LETSENCRYPT_EMAIL)
+logLevel: $(LOG_LEVEL:info)
+logFormat: $(LOG_FORMAT:default)
+ha: $(HA_ACTIVE)
+
+```
 
 Затем можно настраивать авторизацию через [Azure Active Directory](https://docs.requarks.io/auth/azure)
 
@@ -51,8 +75,8 @@ h1 {
  
 
 > Не забываем, что сама вики находится в контейнере в докере. Поэтому, чтобы достучаться до консоли юзаем:  
->  
 > 
 > ```plaintext
 > sudo docker exec -it wiki bash
 > ```
+
